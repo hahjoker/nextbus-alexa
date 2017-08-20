@@ -57,6 +57,19 @@ var getBuses= function(stopId, buses, callback){
                                     }
                                 }
                             }
+                            data.sort(function(a,b){
+                                if (a.timeMinutes<b.timeMinutes) return -1;
+                                if (a.timeMinutes>b.timeMinutes) return 1;
+                                return 0;
+                            });
+                        });
+                        if(reply.error)
+                        {
+                            console.log("error "+reply.error.message)
+                        }
+                        else
+                        {
+                            callback(0, getSchedule(data));
                         }
     });
-}
+};
