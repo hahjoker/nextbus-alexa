@@ -3,7 +3,7 @@ var AlexaSkill = require('./AlexaSkill');
 var fs = require('fs');
 var xml2js = require('xml2js');
 var parser = new xml2js.Parser();
-var APP_ID = 'amzn1.ask.skill.23a7845f-753e-49ef-9a35-cd8095b460d9';
+var APP_ID = '';
 var concat = require('concat-stream');
 
 var getSchedule = function(data){
