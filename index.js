@@ -148,7 +148,7 @@ var handleRequest = function(intent, response){
                         
                         getBuses(sourceStopId, buses, function(err, data) {
                             var speechOutput;
-                            if (err) speechOutput = "Sorry! Rutgers Bus Tracker is experiencing a problem. Please try again later";
+                            if (err) speechOutput = "Sorry! The bus tracker is experiencing a problem. Please try again later";
                             else {
                                 if (data) speechOutput = "The next buses are " + data;
                                 else speechOutput = "There are no direct buses from " + intent.slots.source.value + " to " + intent.slots.destination.value;
@@ -180,7 +180,7 @@ GetBusesByStopIntent: function(intent, session, response) {
 },
 
 "AMAZON.HelpIntent": function(intent, session, response) {
-    var speechOutput = 'Request bus timings from one stop to another inside the University campus. You could ask, "Get next buses from College Hall to Scott Hall."';
+    var speechOutput = 'Request bus timings from one stop to another inside the University campus. You could ask, "Get next buses from the Hill Center to Scott Hall."';
     var reprompt = "What are the bus stops that you are looking at?";
     response.ask(speechOutput, reprompt);
 },
